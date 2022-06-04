@@ -2,6 +2,7 @@
 
 import * as bin from "./index";
 import config from "../../../config.json";
+import { Router } from "next/router";
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
@@ -34,7 +35,6 @@ export const about = async (args: string[]): Promise<string> => {
 Welcome to my website!
 More about me:
 'sumfetch' - short summary.
-'resume' - my latest resume.
 'readme' - my github readme.`;
 };
 
@@ -74,6 +74,14 @@ of
 fake
 directories`;
 };
+
+
+export const resume = async (): Promise<string> => {
+	window.open(config.resume)
+
+	return "Opening resume...";
+}
+
 
 // Banner
 export const banner = (args?: string[]): string => {
