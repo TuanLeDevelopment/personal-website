@@ -75,13 +75,11 @@ fake
 directories`;
 };
 
-
 export const resume = async (): Promise<string> => {
-	window.open(config.resume)
+	window.open(config.resume);
 
 	return "Opening resume...";
-}
-
+};
 
 // Banner
 export const banner = (args?: string[]): string => {
