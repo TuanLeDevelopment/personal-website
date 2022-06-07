@@ -1,10 +1,10 @@
 import React from "react";
 import type { History } from "./interface";
 
-export const useHistory = (defaultValue: Array<History>) => {
-   const [history, setHistory] = React.useState<Array<History>>(defaultValue);
-   const [command, setCommand] = React.useState<string>("");
-   const [lastCommandIndex, setLastCommandIndex] = React.useState<number>(0);
+export const useHistory = (defaultValue: History[]) => {
+   const [history, setHistory] = React.useState(defaultValue);
+   const [command, setCommand] = React.useState("");
+   const [lastCommandIndex, setLastCommandIndex] = React.useState(0);
 
    return {
       history,

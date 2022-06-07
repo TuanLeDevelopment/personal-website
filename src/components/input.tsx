@@ -4,6 +4,18 @@ import { shell } from "../utils/shell";
 import { handleTabCompletion } from "../utils/tabCompletion";
 import { Ps1 } from "./Ps1";
 
+interface InputProps {
+   inputRef;
+   containerRef;
+   command: string;
+   history;
+   lastCommandIndex;
+   setCommand;
+   setHistory;
+   setLastCommandIndex;
+   clearHistory;
+}
+
 export const Input = ({
    inputRef,
    containerRef,
@@ -14,7 +26,7 @@ export const Input = ({
    setHistory,
    setLastCommandIndex,
    clearHistory,
-}) => {
+}: InputProps) => {
    const onSubmit = async (event: React.KeyboardEvent<HTMLInputElement>) => {
       const commands: [string] = history
          .map(({ command }) => command)
